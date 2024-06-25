@@ -6,3 +6,5 @@ L
 templates/catalog/index.html,c/5/c525976d1751d84ff77bed48850f11f3a9cc2200
 @
 requirements.txt,1/9/19359a61ae2446b51b549167b014da2fcf265768
+H
+static_dev/css/style.css,b/b/bbacb5956f1a2c9f300b208102db645782a89fb6
