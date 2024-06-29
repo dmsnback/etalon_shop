@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mptt.admin import MPTTModelAdmin, TreeRelatedFieldListFilter
+from django_mptt_admin.admin import DjangoMpttAdmin
 
 from catalog.models import (
     Category,
@@ -10,7 +10,7 @@ from catalog.models import (
 )
 
 
-class CustomMPTTModelAdmin(MPTTModelAdmin):
+class CustomMPTTModelAdmin(DjangoMpttAdmin):
     mptt_level_indent = 30
     list_display = (
         'name',

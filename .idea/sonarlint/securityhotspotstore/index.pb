@@ -24,3 +24,13 @@ K
 static_dev/js/jquery.min.js,0/1/0122df57e2a7a265a36b4da166741821e2a71925
 G
 static_dev/js/popper.js,1/6/16744bce8344218f91dc66617b923814232f822f
+@
+catalog/views.py,c/8/c871d42adf102fd222c5839e53b991fea965f262
+A
+catalog/models.py,6/b/6bf1d56d4de9666178ce172dc098a5898ca1754e
+?
+catalog/urls.py,6/3/6378f41ed1f7a7e60beed1d11c18b84a6b27eadf
+G
+etalon_shop/settings.py,2/e/2e9aca52eaeb047a68e52dfc1cb9bee95efe9e60
+@
+catalog/admin.py,6/0/60f5ea235082bbfb1e6425b1f6987ab68cd0955d
