@@ -21,8 +21,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mptt',
     'django_mptt_admin',
+    'sorl.thumbnail',
     'catalog',
-
+    'pages',
 ]
 
 MIDDLEWARE = [

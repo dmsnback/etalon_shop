@@ -1,0 +1,32 @@
+{% load static %}
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="{% url 'catalog:index' %}">
+            <img src="{% static 'img/logo/logo_etalon.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Эталон моды
+        </a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+            {% with request.resolver_match.view_name as view_name %}
+                <li class="nav-item {% if view_name == 'catalog:index' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'catalog:index' %}"><i class="fas fa-store"></i>Главная</a>
+                </li>
+                <li class="nav-item {% if view_name == 'catalog:allproducts' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'catalog:allproducts' %}"><i class="fa fa-database"></i>Каталог</a>
+                </li>
+                <li class="nav-item {% if view_name == 'pages:about' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'pages:about' %}"><i class="far fa-clone"></i>О нас</a>
+                </li>
+                <li class="nav-item {% if view_name == 'pages:contacts' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'pages:contacts' %}"><i class="far fa-address-book"></i>Контакты</a>
+                </li>
+            {% endwith %}
+            </ul>
+        </div>
+    </nav>

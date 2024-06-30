@@ -7,6 +7,13 @@ from mptt.models import MPTTModel, TreeForeignKey
 User = get_user_model()
 
 
+def upload_path_product(instance, filename):
+    return ('catalog/{0}/{1}/{2}').format(
+        instance.category.name,
+        instance.title, filename
+    )
+
+
 class Category(MPTTModel):
     """Модель категорий"""
 
@@ -124,6 +131,11 @@ class Product(models.Model):
         blank=True,
         null=True
     )
+    image = models.ImageField(
+        'Фото товара',
+        upload_to=upload_path_product,
+        blank=True
+    )
     volume = models.IntegerField(
         'Объём товара',
         blank=True,
@@ -147,6 +159,11 @@ class Product(models.Model):
         help_text='Укажите цену'
     )
 
+    @property
+    def photo_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+
     class Meta:
         verbose_name = 'Товар',
         verbose_name_plural = 'Товары'
@@ -167,10 +184,15 @@ class ImageProduct(models.Model):
     )
     image = models.ImageField(
         'Изображение товара',
-        upload_to='catalog/',
+        upload_to=upload_path_product,
         blank=True,
         help_text='Загрузите изображение товара'
     )
+
+    @property
+    def photo_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
 
     class Meta:
         verbose_name = 'Фото товара'

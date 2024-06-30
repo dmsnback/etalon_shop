@@ -55,6 +55,7 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'article',
         'price',
+        'image',
         'location_product',
         'color',
         'volume',
