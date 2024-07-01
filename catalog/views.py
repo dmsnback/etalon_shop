@@ -16,4 +16,8 @@ def index(request):
 
 def catalog(request):
     template = 'catalog/catalog.html'
-    return render(request, template)
+    category_list = Category.objects.all()
+    context = {
+        'category_list': category_list
+    }
+    return render(request, template, context)

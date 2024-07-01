@@ -272,3 +272,13 @@ i {
   top: 10px;
   left: 10px;
 }
+
+.menu li {
+	position: absolute;
+	min-width: 150px;
+	display: none;
+}
+
+.menu li:hover > ul {
+	display: block;
+}

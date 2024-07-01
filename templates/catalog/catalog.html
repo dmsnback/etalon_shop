@@ -1,4 +1,6 @@
 {% load static %}
+{% load mptt_tags %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +35,29 @@
     {% include 'includes/header.html' %}
 </header>
 <body>
-Здесь пока ничего нет..(
+<div class="container">
+    <div class="product_all">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="card" style="width: 18rem;">
+                        {% recursetree category_list %}
+                          <div class="card-body">
+                            <h5 class="card-title">{{ node.name }}</h5>
+                          </div>
+                            {% if not node.is_leaf_node %}
+                          <ul class="list-group list-group-flush">
+                              
+                            <li class="list-group-item"><a href="#" class="card-link">{{ children }}</a></li>
+                          
+                          </ul>
+                            {% endif %}
+                        {%  endrecursetree %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
