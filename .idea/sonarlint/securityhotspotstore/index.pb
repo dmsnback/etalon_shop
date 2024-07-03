@@ -38,8 +38,6 @@ P
  templates 2/catalog/catalog.html,c/7/c740961ef492e3536ad7e440555775531a56323a
 N
 templates/catalog/contact.html,6/d/6dee2ea94b995b84f92649ca996786d2cc7f041a
-K
-templates/catalog/shop.html,a/0/a0d8f22b8ed95388174f8cadea5327a814137395
 M
 templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
 H

@@ -14,8 +14,9 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -59,7 +60,7 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="{% url 'catalog:index' %}" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold">
+                    <h1 class="m-0 display-5 font-weight-helvetica-bold">
                         <img src="{% static 'img/logo_etalon.png' %}" width="70" height="70" class="d-inline-block align-top" alt="etalon logo"> Эталон Моды
                     </h1>
                 </a>
@@ -105,13 +106,10 @@
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         {% recursetree category_list %}
                         <div class="nav-item dropdown">
-                            
-                            
-                            <a href="#" class="nav-link" data-toggle="dropdown">{{ node.name }} <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <a href="#" class="nav-link" data-toggle="dropdown">{{ node.name }}</a>
                             {% if not node.is_leaf_node %}   
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                 <a href="" class="dropdown-item">{{ children }}</a>
-                            
                             </div>
                             {% endif %}
                         </div>
@@ -130,7 +128,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'catalog:index' %}" class="nav-item nav-link active">Главная</a>
-                            <a href="catalog.html" class="nav-item nav-link">Каталог</a>
+                            <a href="{% url 'catalog:allproducts' %}" class="nav-item nav-link">Каталог</a>
                             <a href="detail.html" class="nav-item nav-link">О нас</a>
                             <a href="contact.html" class="nav-item nav-link">Контакты</a>
                         </div>
@@ -175,83 +173,8 @@
         </div>
     </div>
     <!-- Navbar End -->
-
-
-    <!-- Categories Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            {% recursetree category_list %}
-            <div class="col-lg-auto col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 10px;">
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="{{ node.photo_url }}" width=200px; alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">{{ node.name}}</h5>
-                </div>
-            </div>
-            {%  endrecursetree %}
-        </div>
-    </div>
-    <!-- Categories End -->
-
     
-
-
-    <!-- Products Start -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Популярные продукты</span></h2>
-        </div>
-        <div class="row px-xl-5 pb-3">
-            {% for product in product_list %}
-            <div class="col-lg-2 col-md-auto col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ product.photo_url }}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">{{ product.title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>{{ product.price }}₽</h6><h6 class="text-muted ml-2">
-                            <!-- Перечеркнутая цена-->
-{#                            <del>{{ product.price }}₽</del>#}
-                        </h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Подробнее</a>
-{#                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>#}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- Products End -->
-
-
-    <!-- Subscribe Start -->
-    <div class="container-fluid bg-secondary my-5">
-        <div class="row justify-content-md-center py-5 px-xl-5">
-            <div class="col-md-6 col-12 py-5">
-                <div class="text-center mb-2 pb-2">
-                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
-                    <p>Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
-                </div>
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Subscribe End -->
-
-
+    
     <!-- Products Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
@@ -280,9 +203,9 @@
     </div>
     <!-- Products End -->
 
-
+    
     <!-- Vendor Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid bg-secondary my-5">
         <div class="row px-xl-5">
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
@@ -315,7 +238,58 @@
         </div>
     </div>
     <!-- Vendor End -->
+    
 
+    <!-- Categories Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            {% recursetree category_list %}
+            <div class="col-lg-auto col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 10px;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                        <img class="img-fluid" src="{{ node.photo_url }}" width=200px; alt="">
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">{{ node.name}}</h5>
+                </div>
+            </div>
+            {%  endrecursetree %}
+        </div>
+    </div>
+    <!-- Categories End -->
+
+    
+    <!-- Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Популярные продукты</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3">
+            {% for product in product_list %}
+            <div class="col-lg-2 col-md-auto col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ product.photo_url }}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{ product.title}}</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>{{ product.price }}₽</h6><h6 class="text-muted ml-2">
+                            <!-- Перечеркнутая цена-->
+{#                            <del>{{ product.price }}₽</del>#}
+                        </h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Подробнее</a>
+{#                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>#}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Products End -->
+    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
