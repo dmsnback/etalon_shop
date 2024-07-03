@@ -27,6 +27,11 @@ class Category(MPTTModel):
         max_length=64,
         unique=True
     )
+    image = models.ImageField(
+        'Картинка категории',
+        upload_to='category_photo/',
+        blank=True
+    )
     parent = TreeForeignKey(
         'self',
         verbose_name='Главная категория',
@@ -52,6 +57,11 @@ class Category(MPTTModel):
             'catalog:product_list_by_category',
             kwargs={'category_slug': self.slug}
         )
+
+    @property
+    def photo_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
 
 
 class LocationProduct(models.Model):

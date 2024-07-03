@@ -7,9 +7,11 @@ def index(request):
     template = 'catalog/index.html'
     product_list = Product.objects.all()
     image_product = ImageProduct.objects.filter(product=Product())
+    category_list = Category.objects.all()
     context = {
         'product_list': product_list,
-        'image_product': image_product
+        'image_product': image_product,
+        'category_list': category_list
     }
     return render(request, template, context)
 

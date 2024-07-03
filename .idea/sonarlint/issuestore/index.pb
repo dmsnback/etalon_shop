@@ -2,16 +2,10 @@
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-L
-templates/catalog/index.html,c/5/c525976d1751d84ff77bed48850f11f3a9cc2200
 @
 requirements.txt,1/9/19359a61ae2446b51b549167b014da2fcf265768
-H
-static_dev/css/style.css,b/b/bbacb5956f1a2c9f300b208102db645782a89fb6
 9
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
-E
-static_dev/js/main.js,0/5/054f48d85bb93a1ab0273eb15a06e58b178d4048
 @
 catalog/views.py,c/8/c871d42adf102fd222c5839e53b991fea965f262
 A
@@ -34,11 +28,21 @@ C
 etalon_shop/wsgi.py,5/c/5ccfed398321135a605743f2143208eca073be41
 >
 pages/views.py,8/1/8158ea4c9e295cbc6550ef723fa88ac76f229f7e
-J
-templates/pages/about.html,4/0/40068e63c53adbaa324efe1bb94793b0aa165ae4
 L
-templates/pages/contact.html,6/f/6f15e39677e6a4501b2399b00d425525d9820eb0
+templates/catalog/index.html,c/5/c525976d1751d84ff77bed48850f11f3a9cc2200
+N
+templates 2/catalog/index.html,f/0/f07f76b439ed80c2beaa70bc6502174e53769744
+P
+ templates 2/includes/header.html,7/f/7f944d64a58a48e8455ece206cc88a151feb517c
+P
+ templates 2/catalog/catalog.html,c/7/c740961ef492e3536ad7e440555775531a56323a
+N
+templates/catalog/contact.html,6/d/6dee2ea94b995b84f92649ca996786d2cc7f041a
+K
+templates/catalog/shop.html,a/0/a0d8f22b8ed95388174f8cadea5327a814137395
+M
+templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
+H
+static_dev/css/style.css,b/b/bbacb5956f1a2c9f300b208102db645782a89fb6
 N
 templates/catalog/catalog.html,1/3/130729c96503dbab44df88fad2c4c6f555723d6f
-N
-templates/includes/header.html,5/a/5adc0b8fc24f7b2410fc27861153dd9649a7dbcc
