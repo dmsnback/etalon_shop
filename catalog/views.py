@@ -17,9 +17,11 @@ def index(request):
 
 
 def catalog(request):
-    template = 'catalog/catalog.html'
+    template = 'catalog/shop.html'
+    product_list = Product.objects.all()
     category_list = Category.objects.all()
     context = {
+        'product_list': product_list,
         'category_list': category_list
     }
     return render(request, template, context)

@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-phone"> 8 (951) ___-__-__</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="{% url 'catalog:index' %}" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-helvetica-bold">
+                        <img src="{% static 'img/logo_etalon.png' %}" width="70" height="70" class="d-inline-block align-top" alt="etalon logo"> Эталон Моды
+                    </h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Поиск...">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+                <a href="" class="btn border">
+                    <i class="fas fa-heart text-primary"></i>
+                    <span class="badge">0</span>
+                </a>
+                <!-- Корзина -->
+{#                <a href="" class="btn border">#}
+{#                    <i class="fas fa-shopping-cart text-primary"></i>#}
+{#                    <span class="badge">0</span>#}
+{#                </a>#}
+            </div>
+        </div>
+    </div>

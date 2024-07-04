@@ -36,11 +36,31 @@ P
  templates 2/includes/header.html,7/f/7f944d64a58a48e8455ece206cc88a151feb517c
 P
  templates 2/catalog/catalog.html,c/7/c740961ef492e3536ad7e440555775531a56323a
-N
-templates/catalog/contact.html,6/d/6dee2ea94b995b84f92649ca996786d2cc7f041a
-M
-templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
 H
 static_dev/css/style.css,b/b/bbacb5956f1a2c9f300b208102db645782a89fb6
 N
-templates/catalog/catalog.html,1/3/130729c96503dbab44df88fad2c4c6f555723d6f
+templates/includes/footer.html,2/e/2ef29d0137375c28253f6109cbb42994aa69c431
+C
+templates/base.html,d/a/da7c237b85a69c00a9ab8c189bf63e22070fcac3
+L
+templates/pages/contact.html,6/f/6f15e39677e6a4501b2399b00d425525d9820eb0
+N
+templates/includes/topbar.html,1/6/1692283200daa9acb030df2e1ffc885bedf2562a
+N
+templates/includes/navbar.html,f/2/f2f4b4c84c73b1a50cddb14c388363225716d069
+N
+templates/includes/Vendor.html,e/a/eacb139fad393c463c2dffcbbf73289fbad05212
+N
+templates/includes/vendor.html,0/0/00c09acd92b3c40f3109b22d25babf87a930d625
+N
+templates/includes/detail.html,7/3/7367303ec880a1faf332cab5b961b969be71dc07
+S
+#templates/includes/page_header.html,9/e/9e076c234d32810e644b5cfdda00d1990e204b70
+K
+templates/catalog/cart.html,e/3/e331b8b4855ff1d8459edfaf87eff3c3037490fe
+[
++static_dev/scss/bootstrap/scss/_navbar.scss,3/a/3a945d9ef585c8354894680d69a0a2bf3403e2b1
+K
+templates/catalog/shop.html,a/0/a0d8f22b8ed95388174f8cadea5327a814137395
+M
+templates/catalog/shop 2.html,a/1/a13b51912f8ab8bcaa419d426f837b036bf298a5
