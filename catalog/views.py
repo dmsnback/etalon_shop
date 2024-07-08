@@ -25,3 +25,15 @@ def catalog(request):
         'category_list': category_list
     }
     return render(request, template, context)
+
+
+def detail_product(request, pk):
+    template = 'catalog/detail.html'
+    product = get_object_or_404(
+        Product.objects.all(), pk=pk)
+    category_list = Category.objects.all()
+    context = {
+        'product': product,
+        'category_list': category_list
+    }
+    return render(request, template, context)

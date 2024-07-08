@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
+from sorl.thumbnail import ImageField
 
 
 User = get_user_model()
@@ -141,7 +142,7 @@ class Product(models.Model):
         blank=True,
         null=True
     )
-    image = models.ImageField(
+    image = ImageField(
         'Фото товара',
         upload_to=upload_path_product,
         blank=True

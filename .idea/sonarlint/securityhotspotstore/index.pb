@@ -30,12 +30,6 @@ C
 pages/views.py,8/1/8158ea4c9e295cbc6550ef723fa88ac76f229f7e
 L
 templates/catalog/index.html,c/5/c525976d1751d84ff77bed48850f11f3a9cc2200
-N
-templates 2/catalog/index.html,f/0/f07f76b439ed80c2beaa70bc6502174e53769744
-P
- templates 2/includes/header.html,7/f/7f944d64a58a48e8455ece206cc88a151feb517c
-P
- templates 2/catalog/catalog.html,c/7/c740961ef492e3536ad7e440555775531a56323a
 H
 static_dev/css/style.css,b/b/bbacb5956f1a2c9f300b208102db645782a89fb6
 N
@@ -52,8 +46,6 @@ N
 templates/includes/Vendor.html,e/a/eacb139fad393c463c2dffcbbf73289fbad05212
 N
 templates/includes/vendor.html,0/0/00c09acd92b3c40f3109b22d25babf87a930d625
-N
-templates/includes/detail.html,7/3/7367303ec880a1faf332cab5b961b969be71dc07
 S
 #templates/includes/page_header.html,9/e/9e076c234d32810e644b5cfdda00d1990e204b70
 K
@@ -64,3 +56,5 @@ K
 templates/catalog/shop.html,a/0/a0d8f22b8ed95388174f8cadea5327a814137395
 M
 templates/catalog/shop 2.html,a/1/a13b51912f8ab8bcaa419d426f837b036bf298a5
+M
+templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
