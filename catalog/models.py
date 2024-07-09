@@ -119,6 +119,11 @@ class Product(models.Model):
         unique=True,
         help_text='Добавте уникальную ссылку'
     )
+    new = models.BooleanField(
+        'Новинка',
+        default=False,
+        help_text='Поставьте галочку, чтобы добавить товар в новинки'
+    )
     location_product = models.ForeignKey(
         LocationProduct,
         on_delete=models.SET_NULL,

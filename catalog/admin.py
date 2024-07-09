@@ -55,6 +55,7 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'article',
         'price',
+        'new',
         'image',
         'location_product',
         'color',
@@ -68,6 +69,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = (
         'title',
         'article',
+        'new'
         'location_product',
         'color',
         'volume',
@@ -78,6 +80,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = (
         'title',
         'article',
+        'new',
         'location_product',
         'color',
         'volume',
