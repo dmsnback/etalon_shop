@@ -27,10 +27,10 @@ def catalog(request):
     return render(request, template, context)
 
 
-def detail_product(request, pk):
+def detail_product(request, slug):
     template = 'catalog/detail.html'
     product = get_object_or_404(
-        Product.objects.all(), pk=pk)
+        Product.objects.all(), slug=slug)
     category_list = Category.objects.all()
     context = {
         'product': product,

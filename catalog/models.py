@@ -4,6 +4,8 @@ from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 from sorl.thumbnail import ImageField
 
+from services.utils import unique_slugify
+
 
 User = get_user_model()
 
@@ -24,8 +26,9 @@ class Category(MPTTModel):
         unique=True,
         help_text='Название категории'
     )
-    slug = models.SlugField(
-        max_length=64,
+    slug = models.CharField(
+        max_length=255,
+        blank=True,
         unique=True
     )
     image = models.ImageField(
@@ -42,6 +45,17 @@ class Category(MPTTModel):
         related_name='children'
     )
 
+    def get_absolute_url(self):
+        return f'{self.slug}'
+
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии заполнения
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.name)
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = 'Категория',
         verbose_name_plural = 'Категории'
@@ -52,12 +66,6 @@ class Category(MPTTModel):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse(
-            'catalog:product_list_by_category',
-            kwargs={'category_slug': self.slug}
-        )
 
     @property
     def photo_url(self):
@@ -113,11 +121,12 @@ class Product(models.Model):
         max_length=256,
         help_text='Укажите название товара'
     )
-    slug = models.SlugField(
+
+    slug = models.CharField(
         'Ссылка',
-        max_length=64,
-        unique=True,
-        help_text='Добавте уникальную ссылку'
+        max_length=255,
+        blank=True,
+        unique=True
     )
     new = models.BooleanField(
         'Новинка',
@@ -174,6 +183,17 @@ class Product(models.Model):
         decimal_places=2,
         help_text='Укажите цену'
     )
+
+    def get_absolute_url(self):
+        return f'{self.slug}'
+
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии заполнения
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.title)
+        super().save(*args, **kwargs)
 
     @property
     def photo_url(self):

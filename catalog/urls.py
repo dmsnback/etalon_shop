@@ -9,5 +9,5 @@ app_name = 'catalog'
 urlpatterns = [
     path('', views.index, name='index'),
     path('catalog/', views.catalog, name='allproducts'),
-    path('product/<int:pk>', views.detail_product, name='detail')
+    path('product/<str:slug>', views.detail_product, name='detail')
 ]

@@ -58,3 +58,9 @@ M
 templates/catalog/shop 2.html,a/1/a13b51912f8ab8bcaa419d426f837b036bf298a5
 M
 templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
+C
+services/__int__.py,e/8/e879d1c1d8207eb890d14cd7a406d23fc3460923
+A
+services/utils.py,d/6/d654a3fb55453f5be45042feaeab27ad92fa1906
+@
+services/init.py,0/9/094546381c357a935e2d2a9bea4e56e0db501f39
