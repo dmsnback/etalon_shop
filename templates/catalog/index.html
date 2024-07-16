@@ -9,33 +9,43 @@
 {% endblock %}
 
 {% block content %}
+        <!-- Navbar Start -->
+    {% include 'includes/navbar.html' %}
+    <!-- Navbar End -->
+    
+    
     <!-- Products Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Новинки</span></h2>
         </div>
-        {% for product in product_list %}
-            {% if product.new %}
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ product.photo_url}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">{{ product.title }}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>{{ product.price }}₽</h6>
+            {% for product in product_list %}
+                {% if product.new %}
+                    <div class="col-lg-2 col-md-auto col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                        {% thumbnail product.image "300x300" crop="center" as im %}
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="Картинка товара">
+                            </div>
+                        {% endthumbnail %}
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">{{ product.title}}</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>{{ product.price }}₽</h6><h6 class="text-muted ml-2">
+                                    <!-- Перечеркнутая цена-->
+        {#                            <del>{{ product.price }}₽</del>#}
+                                </h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="{% url 'catalog:detail' product.slug %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Подробнее</a>
+                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>В корзину</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="{% url 'catalog:detail' product.get_absolute_url %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Подробнее</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>В корзину</a>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-        {% endfor %}    
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
     <!-- Products End -->
@@ -51,12 +61,16 @@
         <div class="row px-xl-5 pb-3">
             {% recursetree category_list %}
             <div class="col-lg-auto col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 10px;">
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="{{ node.photo_url }}" width=200px; alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">{{ node.name }}</h5>
-                </div>
+                
+                    <div class="cat-item d-flex flex-column border mb-4" style="padding: 10px;">
+                        {% thumbnail node.image "200x200" crop="center" as im %}
+                        <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                            <img class="img-fluid" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="Изображение для категории">
+                        </a>
+                        {% endthumbnail %}
+                        <h5 class="font-weight-semi-bold m-0">{{ node.name }}</h5>
+                    </div>
+                
             </div>
             {%  endrecursetree %}
         </div>
@@ -73,9 +87,9 @@
             {% for product in product_list %}
             <div class="col-lg-2 col-md-auto col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
-                {% thumbnail product.image "300x300" as im %}
+                {% thumbnail product.image "300x300" crop="center" as im %}
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ im.url }}" alt="">
+                            <img class="img-fluid w-100" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="Картинка товара">
                     </div>
                 {% endthumbnail %}
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">

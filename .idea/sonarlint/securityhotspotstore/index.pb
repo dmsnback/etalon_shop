@@ -58,11 +58,53 @@ M
 templates/catalog/shop 2.html,a/1/a13b51912f8ab8bcaa419d426f837b036bf298a5
 M
 templates/catalog/detail.html,e/d/ed99eb27ffd4f747b64f8cbf56128bf4fb61ea2d
-C
-services/__int__.py,e/8/e879d1c1d8207eb890d14cd7a406d23fc3460923
 A
 services/utils.py,d/6/d654a3fb55453f5be45042feaeab27ad92fa1906
-@
-services/init.py,0/9/094546381c357a935e2d2a9bea4e56e0db501f39
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+=
+users/urls.py,7/e/7ebb6dc32a2768a7e73ce1c83409f9c85bd4ad6a
+O
+templates/users/logget_out.html,6/c/6cfaad61a5fff9d2a9bf227195e035a409ad894f
+>
+users/admin.py,3/e/3ea505836db8ef76dd1c89a43cfc6ee4cd79a896
+O
+templates/catalog/checkout.html,5/9/590798d5100a3dfc59bc447676dd35128f390b3a
+O
+templates/users/logged_out.html,8/f/8f0da4bb11eaa6db3b9a903b31e0b0fbec47baf4
+=
+users/form.py,5/3/5352425bd83e0e46d30ca29e4f7f859c42e46cf3
+>
+users/views.py,5/f/5fc54a09665485d90807a8e72925d27743a0db75
+K
+templates/users/signup.html,5/4/542ac57f850df9b8c7a2d02cc97d574e0967a2d8
+M
+core/templatetags/__init__.py,f/4/f46813957f15367a33faf83dbcaf71013c9db718
+Q
+!core/templatetags/user_filters.py,3/4/3431dd6cb6d1747e776ec24494b993aa7eb62dc1
+H
+templates/users/login.py,f/8/f80a70213f02eeb8bb3388a283cd136ae06446ef
+J
+templates/users/login.html,f/c/fc8ea2963dff4ad817422218695f376f4d111719
+<
+core/apps.py,0/0/00e220fb32040779934e4d56c9324022aacab658
+=
+users/apps.py,5/4/547f374cbbeef99e636bc50f0d5b5ba07651acb5
+S
+#templates/users/password_reset.html,1/f/1f1fb50c9574330c2c53e574c7657b7da8789f59
+X
+(templates/users/password_reset_done.html,9/b/9b297c22c4cea444eb3996f9739cfd68ee090e6a
+X
+(templates/users/password_reset_form.html,1/8/18171db963cc60b6ee056db7c515830bd974e7b9
+S
+#templates/includes/form_errors.html,5/e/5ee94bd43b28ec1ce727378e48bc35cc0327566b
+R
+"templates/includes/field_form.html,d/d/dd8052131033cd8ba965e9d84026de9a608e4649
+Y
+)templates/users/password_change_form.html,1/8/188a983d8ea171a48dfb0da065fc64e2b79096b9
+Y
+)templates/users/password_change_done.html,0/e/0e87522947496cd0b0c6984604aa1734929f213c
+[
++templates/users/password_reset_confirm.html,2/6/26b098015140bf0f753cc28422d296cdf38e0aeb
+\
+,templates/users/password_reset_complete.html,7/6/76bf8e6641afe33fede4249650fc40f0c9b374c2

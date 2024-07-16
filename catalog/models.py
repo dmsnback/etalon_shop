@@ -1,6 +1,5 @@
-from django.db import models
 from django.contrib.auth import get_user_model
-from django.urls import reverse
+from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 from sorl.thumbnail import ImageField
 
@@ -121,7 +120,6 @@ class Product(models.Model):
         max_length=256,
         help_text='Укажите название товара'
     )
-
     slug = models.CharField(
         'Ссылка',
         max_length=255,
@@ -161,6 +159,7 @@ class Product(models.Model):
         upload_to=upload_path_product,
         blank=True
     )
+
     volume = models.IntegerField(
         'Объём товара',
         blank=True,

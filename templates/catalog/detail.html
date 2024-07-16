@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load mptt_tags %}
+{% load thumbnail %}
 
 {% block title %}
     <title>{{ product.title }}</title>
@@ -9,15 +10,25 @@
 
 {% block content %}
     
+    <!-- Navbar Start -->
+    {% include 'includes/navbar.html' %}
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    {% include 'includes/page_header.html' %}
+    <!-- Page Header End -->
+    
     <!-- Shop Detail Start -->
     <div class="container-fluid py-5">
         <div class="row px-xl-5">
             <div class="col-lg-5 pb-5">
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner border">
+                        {% thumbnail product.image "400x400" crop="center" as im %}
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="{{ product.photo_url }}" alt="{{ product.title }}">
+                            <img class="w-100 h-100" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ im.title }}">
                         </div>
+                        {% endthumbnail %}
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>
