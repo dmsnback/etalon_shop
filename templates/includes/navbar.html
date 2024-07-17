@@ -40,10 +40,16 @@
                             <a href="../pages/contact.html" class="nav-item nav-link">Контакты</a>
                         </div>
                         <!-- Вход и регистрация -->
+                        {% if user.is_authenticated %}
+                            <div class="navbar-nav ml-auto py-0">
+                            <a href="" class="nav-item nav-link"> Перейти в профиль {{ user.first_name }} {{ user.last_name }}</a>
+                        </div>
+                        {% else %}
                         <div class="navbar-nav ml-auto py-0">
                             <a href="{% url 'users:login' %}" class="nav-item nav-link">Войти</a>
                             <a href="{% url 'users:signup' %}" class="nav-item nav-link">Зарегистрироваться</a>
                         </div>
+                        {% endif %}
                     </div>
                 </nav>
                 

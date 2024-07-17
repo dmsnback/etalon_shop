@@ -108,3 +108,9 @@ Y
 +templates/users/password_reset_confirm.html,2/6/26b098015140bf0f753cc28422d296cdf38e0aeb
 \
 ,templates/users/password_reset_complete.html,7/6/76bf8e6641afe33fede4249650fc40f0c9b374c2
+Q
+!templates/includes/paginator.html,4/e/4ef7049c584a6cebb00c4412136a492b0a911138
+O
+templates/includes/product.html,9/4/94c78b581e9a817322d30d01a7379bf46d26305a
+@
+catalog/utils.py,4/3/43a8e56768b0a5aecad65ed5016ef718730132af

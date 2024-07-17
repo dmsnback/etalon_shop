@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 
 from catalog.models import Category, Product, ImageProduct
-
+from catalog.utils import get_page_context
 
 def index(request):
     template = 'catalog/index.html'
@@ -11,7 +11,8 @@ def index(request):
     context = {
         'product_list': product_list,
         'image_product': image_product,
-        'category_list': category_list
+        'category_list': category_list,
+
     }
     return render(request, template, context)
 
@@ -20,9 +21,11 @@ def catalog(request):
     template = 'catalog/shop.html'
     product_list = Product.objects.all()
     category_list = Category.objects.all()
+    page_obj = get_page_context(product_list, request)
     context = {
         'product_list': product_list,
-        'category_list': category_list
+        'category_list': category_list,
+        'page_obj': page_obj
     }
     return render(request, template, context)
 
