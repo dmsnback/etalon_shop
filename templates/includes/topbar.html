@@ -55,4 +55,9 @@
                 </a>
             </div>
         </div>
+    {% if request.path != "/"  %}
+        <!-- Page Header Start -->
+    {% include 'includes/page_header.html' %}
+    <!-- Page Header End -->
+    {% endif %}
     </div>

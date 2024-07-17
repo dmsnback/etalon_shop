@@ -110,3 +110,5 @@ J
 templates/pages/about.html,4/0/40068e63c53adbaa324efe1bb94793b0aa165ae4
 L
 static_dev/css/style.min.css,d/4/d44818b1758e036153515d7149dee7981046f31a
+N
+templates/catalog/profile.html,b/1/b1848518a320474e1c2c27a55108a0065d793657

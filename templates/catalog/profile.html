@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{ user.first_name }} {{ user.last_name }}</title>
+{% endblock %}
+
+{% block content %}
+    
+    <!-- Navbar Start -->
+    {% include 'includes/navbar.html' %}
+    <!-- Navbar End -->
+    
+<div class="container-fluid ">
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="{% static 'img/logo_etalon.png' %}" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-4">
+                      <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+                      <p class="text-dark mb-4">{{ user.username}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Имя</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                        {{ user.first_name}} {{ user.last_name }}
+                    </div>
+                  </div>
+                  <hr>
+                    <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Username</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                      {{ user.username }}
+                    </div>
+                  </div>
+                    <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Почта</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                      {{ user.email }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Телефон</h6>
+                    </div>
+                    <div class="col-sm-9 text-dark">
+                      8 (900) 999-99-99
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="explore" target="__blank" href="#">Редактировать</a>
+                        <a class="explore" target="__blank" href="{% url 'users:password_reset_form' %}">Изменить пароль</a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+</div>
+{% endblock %}

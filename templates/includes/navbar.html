@@ -34,18 +34,26 @@
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                {% with request.resolver_match.view_name as view_name %}
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'catalog:index' %}" class="nav-item nav-link active">Главная</a>
-                            <a href="{% url 'catalog:allproducts' %}" class="nav-item nav-link">Каталог</a>
-                            <a href="{% url 'pages:about' %}" class="nav-item nav-link">О нас</a>
-                            <a href="{% url 'pages:contacts' %}" class="nav-item nav-link">Контакты</a>
+                            <a href="{% url 'catalog:index' %}" class="nav-item nav-link {% if view_name  == 'catalog:index' %}active{% endif %}">Главная</a>
+                            <a href="{% url 'catalog:allproducts' %}" class="nav-item nav-link {% if view_name  == 'catalog:allproducts' %}active{% endif %}">Каталог</a>
+                            <a href="{% url 'pages:about' %}" class="nav-item nav-link {% if view_name  == 'pages:about' %}active{% endif %}">О нас</a>
+                            <a href="{% url 'pages:contacts' %}" class="nav-item nav-link {% if view_name  == 'pages:contacts' %}active{% endif %}">Контакты</a>
                         </div>
                         <!-- Вход и регистрация -->
                         {% if user.is_authenticated %}
+                            {% if view_name != 'catalog:profile' %}
                             <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link"> Перейти в профиль {{ user.first_name }} {{ user.last_name }}</a>
-                        </div>
+                            <a href="{% url 'catalog:profile' user.username %}" class="nav-item nav-link"> Перейти в профиль {{ user.first_name }} {{ user.last_name }}</a>
+                            </div>
+                            {% else %}
+                                <div class="navbar-nav ml-auto py-0">
+                                    <a href="{% url 'catalog:profile' user.username %}" class="nav-item nav-link"> {{ user.first_name }} {{ user.last_name }}</a>
+                                    <a href="{% url 'users:logout'%}" class="nav-item nav-link"> Выйти из профиля</a>
+                            </div>
+                            {% endif %}
                         {% else %}
                         <div class="navbar-nav ml-auto py-0">
                             <a href="{% url 'users:login' %}" class="nav-item nav-link">Войти</a>
@@ -53,6 +61,7 @@
                         </div>
                         {% endif %}
                     </div>
+                {% endwith %}
                 </nav>
                 
                 <!-- Карусель с товарами -->

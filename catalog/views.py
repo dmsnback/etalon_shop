@@ -40,3 +40,12 @@ def detail_product(request, slug):
         'category_list': category_list
     }
     return render(request, template, context)
+
+
+def profile(request, username):
+    template = 'catalog/profile.html'
+    category_list = Category.objects.all()
+    context = {
+        'category_list': category_list
+    }
+    return render(request, template, context)
