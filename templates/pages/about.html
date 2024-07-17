@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>О нас</title>
+{% endblock %}
+
+{% block content %}
+
+
+    <!-- Navbar Start -->
+    {% include 'includes/navbar.html' %}
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    {% include 'includes/page_header.html' %}
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="responsive-container-block bigContainer">
+  <div class="responsive-container-block Container">
+    <img class="mainImg" src="{% static 'img/shop_photo/ photo_shop.jpg' %}">
+    <div class="allText aboveText">
+      <p class="text-blk headingText">
+        Эталон Моды
+      </p>
+      <p class="text-blk subHeadingText">
+        Всё для создания твоего идеального маникюра
+      </p>
+      <p class="text-blk description">
+        <p>В нашем магазине вы можете приобрести профессиональную продукцию для мастеров ногтевого сервиса, парикмахеров, мастеров наращивания ресниц, а так же для ухода за волосами и телом.<br/>
+        "Эталон моды" предлагает широкий выбор одноразовых расходных материалов для салонов красоты и парикмахерских.</p>
+      </p>
+        <a class="explore" href="{% url 'catalog:allproducts' %}" role="button">За покупками</a>
+    </div>
+  </div>
+  
+</div>
+    <!-- About End -->
+{% endblock %}
