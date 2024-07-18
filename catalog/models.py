@@ -235,3 +235,33 @@ class ImageProduct(models.Model):
 
     def __str__(self):
         return self.product.title
+
+
+class Favorite(models.Model):
+    """Модель избранное"""
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='favorites',
+        verbose_name='Пользователь'
+    )
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name='favorites',
+        verbose_name='Продукт'
+    )
+
+    class Meta:
+        verbose_name = 'Избранное',
+        verbose_name_plural = 'Избранное'
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'product'],
+                name='unique_favorites'
+
+            )
+        ]
+
+    def __str__(self):
+        return f'{self.user} добавил {self.product} в избранное.'

@@ -4,6 +4,7 @@ from django_mptt_admin.admin import DjangoMpttAdmin
 from catalog.models import (
     Category,
     ColorProduct,
+    Favorite,
     LocationProduct,
     Product,
     ImageProduct
@@ -89,8 +90,17 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
 
+class FavoriteAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'product'
+    )
+
+
 admin.site.register(Category, CustomMPTTModelAdmin)
 admin.site.register(ColorProduct, ColorProductAdmin)
 admin.site.register(LocationProduct, LocationProductAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ImageProduct, ImageProductAdmin)
+admin.site.register(Favorite, FavoriteAdmin)
+
